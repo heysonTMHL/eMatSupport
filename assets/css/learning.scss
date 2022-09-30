@@ -1,0 +1,199 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> View As Diff Style
+.learning-page .page-container {
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+
+    @include menu-tab;
+
+    .view-toggle {
+        @include flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 20px;
+        top: 17px;
+        z-index: 23;
+
+        .item {
+            @include button;
+            @include flex;
+            height: 20px;
+            border: 1px solid #ddd;
+            padding: 5px 15px;
+            background-color: #fff;
+            font-size: .75rem;
+
+            i {
+                margin-top: 2px;
+                margin-right: 8px;
+            }
+
+            @media (max-width: $tablet) {
+                span {
+                    display: none;
+                }
+
+                i {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .item.selected {
+            color: #1890FF;
+            border-color: #1890FF;
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> View As Diff Style
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Learning Item Mixin
+@mixin learning-item {
+    .grid-item {
+        color: #464646;
+        font-size: .85rem;
+        border: 1px solid #eee;
+
+        &:hover {
+            @include shadow;
+            cursor: pointer;
+            background-color: #F3F8FF;
+        }
+
+        .image {
+            width: 100%;
+            height: 90px;
+            background-color: #C9DEE2;
+
+            .no-image {
+                background-color: #C9DEE2;
+            }
+        }
+
+        .item-info {
+            padding: 5px 12px 12px;
+
+            .grid-inline {
+                @include flex;
+                justify-content: flex-start;
+
+                .link {
+                    @include button;
+                    @include flex;
+                    width: 30px;
+                    height: 30px;
+                    margin-left: auto;
+                    color: #3D89DE;
+                    border-radius: 4px;
+
+                    &:hover {
+                        background-color: #CBDFF6;
+                    }
+                }
+            }
+
+            .title {
+                font-weight: 400;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .isRecommended {
+                color: #FFCE31;
+                margin-left: 10px;
+            }
+
+            .updated-at {
+                margin: 2px 0 5px;
+                font-size: .7rem;
+            }
+
+            .product-type {
+                padding: 5px 10px;
+                background-color: #F2F3FF;
+                color: #03075B;
+                font-weight: 400;
+                font-size: .7rem;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            .learning-format {
+                font-size: .75rem;
+                margin-right: 10px;
+
+                &::before {
+                    font-family: 'Font Awesome 6 Pro' !important;
+                    margin-right: 5px;
+                }
+            }
+
+            .learning-format.ARTICLE::before {
+                content: '\e0c0';
+            }
+
+            .learning-format.VIDEO::before {
+                content: '\e132';
+            }
+
+            .function-type {
+                font-size: .75rem;
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Learning Item Mixin
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Grid View
+.learning-page .page-container {
+    .data-grid-view {
+        @include grid-list-size;
+        background-color: #fff;
+        border: 1px solid #E4E7ED;
+        border-top: 0;
+        padding: 15px 20px;
+        @include learning-item;
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Grid View
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Detail View
+.learning-detail-page {
+    .sub-header {
+        @include flex;
+        justify-content: flex-start;
+        font-size: .85rem;
+
+        .module {
+            padding: 5px 10px;
+            background-color: #F4F4F4;
+            color: #717070;
+            font-weight: 400;
+            font-size: .7rem;
+            border-radius: 5px;
+            max-width: max-content;
+            margin-left: 10px;
+        }
+    }
+
+    .page-container {
+        padding: 15px 20px;
+        font-size: .8rem;
+
+        .content-container.ARTICLE {
+            @include shadow;
+            background-color: #fff;
+            padding: 15px 20px;
+        }
+
+        .content-container.VIDEO .video-js {
+            width: calc(100vw - 40px);
+            max-height: calc(100vh - 200px);
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Detail View

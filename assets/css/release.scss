@@ -1,0 +1,169 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Tab Style
+.release-page .page-container {
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+
+    @include menu-tab;
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Tab Style
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data List View
+.release-page .page-container {
+    .data-list-view {
+        background-color: #fff;
+        border: 1px solid #E4E7ED;
+        border-top: 0;
+        padding: 0 20px;
+        height: calc(100vh - 250px);
+        overflow: auto;
+        width: calc(100% - 40px);
+        @include table;
+        @include pagination;
+
+        .table-section {
+            margin-top: 10px;
+
+            td {
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+
+            .product-type {
+                padding: 2px 10px;
+                background-color: #F2F3FF;
+                color: #03075B;
+                font-weight: 400;
+                font-size: .7rem;
+                border-radius: 5px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data List View
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Release Note Item Mixin
+@mixin release-note-item {
+    .grid-item {
+        color: #464646;
+        font-size: .85rem;
+        @include flex;
+        justify-content: flex-start;
+
+        &:hover {
+            @include shadow;
+            cursor: pointer;
+            background-color: #F3F8FF;
+        }
+
+        .note-icon {
+            width: 45px;
+            height: 45px;
+            padding: 0 5px 0 15px;
+        }
+
+        .item-info {
+            padding: 12px 12px 10px;
+
+            .title {
+                font-weight: 400;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .sub-title {
+                font-size: .75rem;
+            }
+
+            .inline-item {
+                @include flex;
+                justify-content: flex-start;
+                font-size: .7rem;
+                margin-top: 2px;
+
+                .release-type {
+                    font-weight: 400;
+                    width: max-content;
+
+                    &::after {
+                        font-weight: 100;
+                        content: '-';
+                        padding: 0 5px;
+                    }
+                }
+
+                .product-type {
+                    padding: 2px 10px;
+                    background-color: #F2F3FF;
+                    color: #03075B;
+                    font-weight: 400;
+                    font-size: .7rem;
+                    border-radius: 5px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Release Note Item Mixin
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Detail View
+.release-detail-page {
+    .header .page-changes {
+        @include buttons-style;
+
+        .action-button {
+            background-color: #EEF5FC;
+            color: #3D89DE;
+            border-radius: 15px;
+
+            .prefix {
+                margin-right: 5px;
+            }
+
+            .suffix {
+                margin-left: 5px;
+            }
+        }
+
+        .is-disabled.action-button {
+            filter: grayscale(0);
+            opacity: .3;
+        }
+    }
+
+    .sub-header {
+        @include flex;
+        justify-content: flex-start;
+        font-size: .85rem;
+
+        .module {
+            padding: 5px 10px;
+            background-color: #F2F3FF;
+            color: #03075B;
+            font-weight: 400;
+            font-size: .7rem;
+            border-radius: 5px;
+            max-width: max-content;
+            margin-left: 10px;
+        }
+    }
+
+    .page-container {
+        padding: 15px 20px;
+
+        .content-container {
+            @include shadow;
+            background-color: #fff;
+            padding: 15px 20px;
+            font-size: .8rem;
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Detail View

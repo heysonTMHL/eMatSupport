@@ -1,0 +1,138 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Style
+.faq-page .page-container {
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+
+    .module-question-list {
+        padding: 0 5px;
+    }
+
+    .all-modules {
+        font-size: .8rem;
+
+        .module-section {
+            @include shadow;
+            padding: 15px 20px;
+            background-color: #fff;
+            margin-bottom: 15px;
+
+            .module-header {
+                @include flex;
+                justify-content: flex-start;
+                font-weight: 400;
+
+                img {
+                    width: 25px;
+                    margin-right: 15px;
+                }
+
+                .view-all {
+                    @include button;
+                    margin-left: auto;
+                    color: #3D89DE;
+                    font-size: .7rem;
+                    white-space: nowrap;
+
+                    &:after {
+                        font-family: 'Font Awesome 5 Pro' !important;
+                        margin-left: 10px;
+                        content: '\f105';
+                    }
+                }
+            }
+
+            .item {
+                padding-bottom: 5px;
+            }
+        }
+    }
+}
+
+.faq-page {
+    .back-button {
+        @include button;
+        margin-right: 5px;
+        font-size: 1rem;
+    }
+
+    .faq-filters {
+        @include buttons-style;
+
+        .individual-section.wide-section {
+            width: calc(100% - 100px);
+        }
+
+        .action-button {
+            border-radius: 2px;
+            height: 32px;
+            width: 100px;
+            padding: 0;
+        }
+    }
+
+    .modules-filtered-view {
+        padding: 0px 20px;
+        background-color: #fff;
+        min-height: 100px;
+
+        .container-header {
+            margin-bottom: 0;
+            font-size: .7rem;
+            font-weight: 200;
+            padding-top: 20px;
+        }
+    }
+
+    .all-modules .module-question-list,
+    .modules-filtered-view {
+        .item {
+            font-size: .85rem;
+            padding: 10px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #eee;
+            }
+
+            .title {
+                @include button;
+                font-weight: 400;
+                padding: 5px 0;
+
+                .toggle-icon {
+                    color: #3D89DE;
+                    margin-right: 5px;
+                    font-size: .8rem;
+                }
+            }
+
+            .answer {
+                padding: 5px 0;
+                line-height: 25px;
+                font-size: .8rem;
+            }
+
+            .title,
+            .answer {
+                .keyword {
+                    background-color: #fff500;
+                    margin: 0 2px;
+                    padding: 0 5px;
+                }
+            }
+
+            .module {
+                padding: 5px 10px;
+                background-color: #F4F4F4;
+                color: #717070;
+                font-weight: 400;
+                font-size: .7rem;
+                border-radius: 5px;
+                max-width: max-content;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Style

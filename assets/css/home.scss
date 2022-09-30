@@ -1,0 +1,118 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Style
+.home-page .page-container {
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, calc(100%/2));
+    grid-gap: 10px;
+    padding-right: 30px;
+    @media (max-width: $desktop) {
+        grid-template-columns: repeat(1, calc(100%/1));
+        padding-right: 20px;
+    }
+
+    .release-notes-list-view,
+    .support-contacts,
+    .learnings-grid-view {
+        @include shadow;
+        background-color: #fff;
+        padding: 10px 20px 15px;
+        margin-bottom: 10px;
+        font-size: .8rem;
+
+        .container-header {
+            @include flex;
+            justify-content: flex-start;
+            font-size: .85rem;
+            font-weight: 400;
+            height: 40px;
+
+            .view-all {
+                @include button;
+                margin-left: auto;
+                color: #3D89DE;
+                font-size: .7rem;
+                white-space: nowrap;
+
+                &:after {
+                    font-family: 'Font Awesome 5 Pro' !important;
+                    margin-left: 10px;
+                    content: '\f105';
+                }
+            }
+        }
+    }
+
+    .release-notes-list-view {
+        .data-grid-view {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            @include release-note-item;
+            max-height: calc(100vh - 350px);
+            overflow-y: auto;
+
+            .grid-item:not(:last-child) {
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+
+    .learnings-grid-view {
+        .data-grid-view {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(2, calc(100%/2));
+            padding-right: calc(0px + calc(10px * 1));
+            margin-top: 10px;
+            margin-bottom: 10px;
+            @include learning-item;
+        }
+    }
+
+    .support-contacts {
+        .data-contact-view {
+            display: grid;
+            grid-template-columns: repeat(2, calc(100%/2));
+            padding-right: 10px;
+            grid-gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            @media (max-width: $desktop) {
+                grid-template-columns: repeat(1, calc(100%/1));
+                padding-right: 0px;
+            }
+
+            .item {
+                font-size: .8rem;
+                border: 1px solid #eee;
+                padding: 10px 15px;
+
+                .name {
+                    font-weight: 400;
+                }
+
+                .email,
+                .phone {
+                    font-size: .7rem;
+
+                    &:before {
+                        font-family: 'Font Awesome 6 Pro' !important;
+                        content: '\f095';
+                        margin-right: 10px;
+                    }
+                }
+
+                .email {
+                    &:before {
+                        content: '\f0e0';
+                    }
+                }
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page Style
